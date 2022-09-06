@@ -7,8 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "eslint": "eslint --ext .js,.jsx src",
+    "lint": "lint-staged",
     "test": "vitest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "npm run build && git add dist -f && git commit -m 'build: hosting'  && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -18,10 +21,12 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^17.1.0",
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
+    "commitlint": "^17.1.2",
     "eslint": "^8.23.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -35,5 +40,13 @@
     "prettier": "^2.7.1",
     "vite": "^3.1.0",
     "vitest": "^0.23.1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "src/**": "eslint"
   }
 }
