@@ -2,6 +2,26 @@ import React, { useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { filmsState, viewAtoms } from '../../atom';
 import Menu from '../../Menu';
+import Hero from '../components/Hero';
+import NavBar from '../components/NavBar';
+
+const Home = () => {
+  return (
+    <div className="bg-blue-200 h-screen">
+      <NavBar />
+      <Hero />
+    </div>
+  );
+};
+
+export default Home;
+
+/*
+import React, { useEffect } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { filmsState, viewAtoms } from '../../atom';
+import Menu from '../../Menu';
+import NavBar from '../components/NavBar';
 
 const Home = () => {
   const [films, setFilms] = useRecoilState(filmsState);
@@ -18,7 +38,8 @@ const Home = () => {
   }, [setFilms]);
 
   return (
-    <div className="bg-pink-300 h-screen">
+    <div className="bg-blue-200 h-screen">
+      <NavBar />
       <h1 className="uppercase">Hello Star Wars!!</h1>
       <Menu />
       <div>
@@ -36,3 +57,5 @@ const Home = () => {
 };
 
 export default Home;
+
+*/

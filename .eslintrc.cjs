@@ -17,6 +17,10 @@ module.exports = {
   },
   plugins: ['react', 'prettier', 'tailwindcss'],
   rules: {
+    'no-static-element-interactions': 0,
+    'click-events-have-key-events': 0,
+    'tailwindcss/classnames-order': 0,
+    'react/button-has-type': 0,
     'react/function-component-definition': [
       0,
       {

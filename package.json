@@ -8,7 +8,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "eslint": "eslint --ext .js,.jsx src",
-    "lint": "lint-staged",
     "test": "vitest",
     "prepare": "husky install",
     "deploy": "npm run build && git add dist -f && git commit -m 'build: hosting'  && git subtree push --prefix dist origin gh-pages"
@@ -18,6 +17,7 @@
     "eslint-plugin-tailwindcss": "^3.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "recoil": "^0.7.5"
   },
@@ -50,8 +50,5 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "lint-staged": {
-    "src/**": "eslint"
   }
 }
